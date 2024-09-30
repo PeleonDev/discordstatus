@@ -1,9 +1,3 @@
-# discordstatus
-Discord Status Script for FiveM
-Here’s your README in English, formatted for a GitHub open-source project:
-
----
-
 # Discord Rich Presence for FiveM
 
 This script enables Discord Rich Presence for FiveM players, showing the player's name and server ID in their Discord status. It also allows for custom images and buttons to be displayed in the Rich Presence.
@@ -50,7 +44,3 @@ end)
 ## Security Consideration
 
 The script contains obfuscated code that may be hard to understand. If you did not write or review this part of the code, be cautious before deploying it on your server to avoid potential security risks.
-
----
-
-This README explains the purpose and usage of the script, includes a brief customization guide, and highlights potential security concerns regarding the obfuscated code at the end. It’s structured for easy understanding for contributors and users alike.
