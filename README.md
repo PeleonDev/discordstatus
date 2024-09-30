@@ -1,7 +1,3 @@
-Here’s the updated README file to reflect the new configuration, including the config script and manifest changes:
-
----
-
 # Discord Rich Presence for FiveM
 
 This script allows you to display player information, custom images, and interactive buttons in the Discord Rich Presence for FiveM servers. The script is easily configurable using the provided `config.lua` file, making it simple to customize for your server.
