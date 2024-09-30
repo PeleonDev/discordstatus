@@ -40,7 +40,7 @@ The script uses `config.lua` for easy customization. Below is an example configu
 Config = {}
 
 -- Your Discord Application ID (replace with your own)
-Config.DiscordAppId = 1234548608754520084
+Config.DiscordAppId = YOUR ID
 
 -- Large Icon Image Key (from Discord Developer Portal)
 Config.LargeIcon = 'your_image_key'  -- Replace with the key of the uploaded image
