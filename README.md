@@ -1,46 +1,68 @@
+Here’s the updated README file to reflect the new configuration, including the config script and manifest changes:
+
+---
+
 # Discord Rich Presence for FiveM
 
-This script enables Discord Rich Presence for FiveM players, showing the player's name and server ID in their Discord status. It also allows for custom images and buttons to be displayed in the Rich Presence.
-
-## Installation
-
-1. **Download and Add to FiveM Server**: Download this script and add it to your FiveM server directory.
-2. **Set Your Discord Application ID**: Replace the Application ID in the `SetDiscordAppId()` function with your own [Discord Developer Application ID](https://discord.com/developers/applications).
-3. **Add Custom Image**: Upload your desired image to the Rich Presence Art Assets in your Discord application, and set the image key in `SetDiscordRichPresenceAsset()`.
+This script allows you to display player information, custom images, and interactive buttons in the Discord Rich Presence for FiveM servers. The script is easily configurable using the provided `config.lua` file, making it simple to customize for your server.
 
 ## Features
 
-- **Discord Rich Presence**: Displays the player's name and server ID in their Discord status.
-- **Custom Icons**: Allows the use of a custom large icon (image) in the Discord status.
-- **Hover Text**: Custom text shown when hovering over the large icon.
-- **Buttons**: Adds up to two buttons in the Discord status, which can link to your Discord server or other URLs.
+- **Discord Rich Presence**: Displays player name and server ID in Discord.
+- **Custom Large Icon**: Allows the use of a custom large image in the Discord Rich Presence.
+- **Hover Text**: Shows hover text over the large icon.
+- **Buttons**: Adds custom clickable buttons in Discord, such as joining a Discord server or connecting to the FiveM server.
 
-## Customization
+## Installation
 
-- **Discord Application ID**: Replace the ID in `SetDiscordAppId()` with your own Discord Application ID.
-- **Custom Large Icon**: Replace the image key in `SetDiscordRichPresenceAsset()` with the key of the image you uploaded to your Discord application's Art Assets.
-- **Hover Text**: Modify the text in `SetDiscordRichPresenceAssetText()` to change the hover text over the large icon.
-- **Buttons**: Use `SetDiscordRichPresenceAction()` to customize the buttons. The first parameter is the button index (0 or 1), the second is the button label, and the third is the URL (must start with `fivem://connect/` or `https://`).
+1. **Download and Add to Your FiveM Server**:
+    - Place the entire folder in your FiveM resource directory.
+    - Add `ensure [folder_name]` to your server configuration file (`server.cfg`).
 
-## Example Code
+2. **Configure the Script**:
+    - Open `config.lua` and modify the following fields:
+        - `Config.DiscordAppId`: Set your Discord Application ID from the [Discord Developer Portal](https://discord.com/developers/applications).
+        - `Config.LargeIcon`: Add the image key of your custom large icon.
+        - `Config.LargeIconHoverText`: Set the hover text for your large icon.
+        - `Config.Buttons`: Customize the labels and URLs for the buttons, such as a link to your Discord server or a direct connection to your FiveM server.
+
+3. **Start Your Server**: Start the FiveM server and the Discord Rich Presence will automatically update with the player’s information.
+
+## Configuration
+
+The script uses `config.lua` for easy customization. Below is an example configuration:
+
+### `config.lua`
 
 ```lua
-Citizen.CreateThread(function()
-    while true do
-        local PlayerName = GetPlayerName(PlayerId())
-        local id = GetPlayerServerId(PlayerId())
+-- Configurations for Discord Rich Presence
 
-        SetDiscordAppId(1234548608754520084)  -- Replace with your own Discord App ID
-        SetRichPresence(PlayerName.." ["..id.."]")  -- Displays player's name and ID
-        SetDiscordRichPresenceAsset('https://i.ibb.co/MVgxZ88/image.png')  -- Replace with your own image key
-        SetDiscordRichPresenceAssetText('MotionV')  -- Hover text for large icon
-        SetDiscordRichPresenceAction(1, "Discord", "https://discord.gg/nrS84g5vq6")  -- Button with a link
+Config = {}
 
-        Citizen.Wait(60000)  -- Updates every 1 minute
-    end
-end)
+-- Your Discord Application ID (replace with your own)
+Config.DiscordAppId = 1234548608754520084
+
+-- Large Icon Image Key (from Discord Developer Portal)
+Config.LargeIcon = 'your_image_key'  -- Replace with the key of the uploaded image
+
+-- Hover text when hovering over the large icon
+Config.LargeIconHoverText = 'Your Server Name'  -- Change this to your desired hover text
+
+-- Button settings
+Config.Buttons = {
+    {label = "Join Discord", url = "https://discord.gg/yourdiscordlink"},  -- Replace with your Discord invite link
+    {label = "Connect to Server", url = "fivem://connect/yourserverip"}  -- Replace with your FiveM server connection URL
+}
+
+-- Update interval in milliseconds (1 minute = 60000 ms)
+Config.UpdateInterval = 60000  -- 1 minute
 ```
 
-## Security Consideration
+## Requirements
 
-The script contains obfuscated code that may be hard to understand. If you did not write or review this part of the code, be cautious before deploying it on your server to avoid potential security risks.
+- [Discord Developer Application](https://discord.com/developers/applications) for Rich Presence setup.
+- FiveM server.
+
+## License
+
+This project is open-source and available under the MIT License. You are free to use, modify, and distribute it as long as proper attribution is provided.
