@@ -3,6 +3,9 @@ game 'gta5'
 
 author 'Peleon'
 description 'Discord Rich Presence for FiveM'
-version '1.0.0'
+version '2.0.0'
 
-client_script 'client.lua'
+client_scripts {
+    'config.lua',  
+    'client.lua'   
+}
