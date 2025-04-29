@@ -5,7 +5,4 @@ author 'Peleon'
 description 'Discord Rich Presence for FiveM'
 version '2.0.0'
 
-client_scripts {
-    'config.lua',  
-    'client.lua'   
-}
+client_script 'client.lua'
