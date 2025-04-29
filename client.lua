@@ -1,4 +1,3 @@
-brauche ich eine readme für dieses script? wenn ja, dann schreibe mir eine:
 Citizen.CreateThread(function()
     while true do
         local PlayerName = GetPlayerName(PlayerId())
