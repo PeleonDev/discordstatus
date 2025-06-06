@@ -29,13 +29,11 @@ Citizen.CreateThread(function()
     while true do
         local PlayerName = GetPlayerName(PlayerId())
         local id = GetPlayerServerId(PlayerId())
-
-        SetDiscordAppId(1234548608754520084)
-        SetRichPresence(PlayerName.." ["..id.."]")
-        SetDiscordRichPresenceAsset('https://i.ibb.co/MVgxZ88/image.png')
-        SetDiscordRichPresenceAssetText('MotionV')
-        SetDiscordRichPresenceAction(1, "Discord", "https://discord.gg/nrS84g5vq6")
-
+        SetDiscordAppId(1290284808135774291)
+        SetRichPresence(PlayerName.." ("..id..")")
+        SetDiscordRichPresenceAsset('https://i.ibb.co/rG6RvHvS/mysticv-icon.png')
+        SetDiscordRichPresenceAssetText('MysticV')
+        SetDiscordRichPresenceAction(1, "Discord", "https://discord.gg/mysticv")
         Citizen.Wait(60000)
     end
 end)
