@@ -4,7 +4,7 @@ Citizen.CreateThread(function()
         local id = GetPlayerServerId(PlayerId())
         -- This is the Application ID (Replace this with you own)
         SetDiscordAppId(1290284808135774291)
-        SetRichPresence(PlayerName.." ["..id.."]") -- This will take the player name and the Id
+        SetRichPresence(PlayerName.." ("..id..")") -- This will take the player name and the Id
         -- Here you will have to put the image name for the "large" icon.
         -- You can create one by go to Rich Presence/Art Assets tab in your application and  click Add Image(s)
         -- The Paramater is your Image key that you uploaded (you can change it too once you upload)
